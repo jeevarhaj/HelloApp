@@ -1,22 +1,23 @@
 public class HelloApp {
     public static void main(String[] args) {
-        String name;
 
-        if (args.length > 0) {
+        String result;
+
+        // Check if no arguments
+        if (args.length == 0) {
+            result = "World";
+        } else {
             StringBuilder sb = new StringBuilder();
 
-            for (int i = 0; i < args.length; i++) {
-                sb.append(args[i]);
-                if (i < args.length - 1) {
-                    sb.append(", ");
-                }
+            // Enhanced for loop
+            for (String name : args) {
+                sb.append(name).append(", ");
             }
 
-            name = sb.toString();
-        } else {
-            name = "World";
+            // Remove last comma and space
+            result = sb.substring(0, sb.length() - 2);
         }
 
-        System.out.println("Hello, " + name + "!");
+        System.out.println("Hello, " + result + "!");
     }
 }
