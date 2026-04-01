@@ -6,14 +6,8 @@ public class HelloApp {
         if (args.length == 0) {
             result = "World";
         } else {
-            StringBuilder sb = new StringBuilder();
-
-            for (String name : args) {
-                sb.append(name).append(", ");
-            }
-
-            // UC6 main idea
-            result = sb.substring(0, sb.length() - 2);
+            // UC7 main idea
+            result = String.join(", ", args);
         }
 
         System.out.println("Hello, " + result + "!");
